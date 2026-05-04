@@ -2,11 +2,12 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ "main" ] # Bygger när du pushar till main
+    branches: [ "main" ]
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  # Här tvingar vi namnet till lowercase
+  IMAGE_NAME: professorn3/volttageapp 
 
 jobs:
   build:
